@@ -1,0 +1,14 @@
+{
+  "njuskalo": {
+    "term": "Audi",
+    "minYear": "2015",
+    "maxYear": "2019",
+    "maxMileage": "200000"
+  },
+  "bolha": {
+    "term": "BMW",
+    "minYear": "2018",
+    "maxYear": "2022",
+    "maxMileage": "100000"
+  }
+}
