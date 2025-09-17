@@ -23,7 +23,7 @@ The tests use:
 ## 2. Installation
 1. Clone the repository:
 ```bash
-git clone <repo-url>
+git clone https://github.com/aleksandrasobodic/njuskalo-playwright.git
 cd njuskalo-playwright
 ```
 
