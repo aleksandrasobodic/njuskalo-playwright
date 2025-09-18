@@ -1,5 +1,5 @@
 import { Page, expect } from '@playwright/test';
-import { acceptCookies, selectCategory, selectYearRange, setMileage } from '../helpers/helpers';
+import { acceptCookies, fillSearchInput, selectCategory, selectYearRange, setMileage } from '../helpers/helpers';
 
 export class NjuskaloPage {
     constructor(private page: Page) { }
@@ -13,7 +13,9 @@ export class NjuskaloPage {
 
     // Search for a term "Audi", click on "Kategorije", and select "Audi", check URL contains "audi"
     async search(term: string) {
-        await this.page.type('input[name="keywords"]', term, { timeout: 5000 });
+        // From helpers.ts - simulate human typing
+        await fillSearchInput(this.page, term);
+
         // From helpers.ts - select category
         await selectCategory(this.page, term);
         await expect(this.page).toHaveURL(new RegExp(term, 'i'));

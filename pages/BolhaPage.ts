@@ -1,5 +1,5 @@
 import { Page, expect } from "@playwright/test";
-import { acceptCookies, selectCategory, selectYearRange, setMileage } from '../helpers/helpers';
+import { acceptCookies, fillSearchInput, selectCategory, selectYearRange, setMileage } from '../helpers/helpers';
 
 export class BolhaPage {
     constructor(private page: Page) { }
@@ -13,8 +13,8 @@ export class BolhaPage {
 
     // Search for a term "BMW", click on "Kategorije", and select "BMW", check URL contains "bmw"
     async search(term: string) {
-        const input = this.page.locator('input[name="keywords"]');
-        await input.fill(term, { timeout: 5000 });
+        // From helpers.ts - simulate human typing
+        await fillSearchInput(this.page, term);
 
         // From helpers.ts - select category
         await selectCategory(this.page, term);

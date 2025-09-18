@@ -3,6 +3,14 @@ import { NjuskaloPage } from '../pages/NjuskaloPage';
 import { BolhaPage } from '../pages/BolhaPage';
 import testData from '../test-data.json';
 
+// Add stealth script before each test to reduce bot detection
+test.beforeEach(async ({ page }) => {
+  await page.addInitScript(() => {
+    Object.defineProperty(navigator, 'webdriver', { get: () => false });
+  });
+});
+
+
 interface SearchData {
     njuskalo: { term: string; minYear: string; maxYear: string; maxMileage: string };
     bolha: { term: string; minYear: string; maxYear: string; maxMileage: string };
@@ -11,7 +19,6 @@ interface SearchData {
 const data = testData as SearchData;
 
 test.describe('Search tests for Njuškalo and Bolha', () => {
-
 
     // Njuskalo test: search for "Audi", filter by year 2015-2019 and mileage < 200000, check results count > 0
     test('Njuskalo search with filters', async ({ page }) => {

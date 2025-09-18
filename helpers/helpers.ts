@@ -20,6 +20,15 @@ export async function acceptCookies(page: Page) {
 }
 
 
+// Simulate human typing (debounce)
+export async function fillSearchInput(page: Page, term: string) {
+    const input = page.locator('input[name="keywords"]');
+    await input.fill(term, { timeout: 5000 });
+
+    // Helps with debounce
+    await page.waitForTimeout(1000);
+}
+
 // Search for a term "Audi/BMW", click on "Kategorije", and select "Audi/BMW", check URL contains "audi/bmw"
 export async function selectCategory(page: Page, name: string) {
     await page.getByRole('button', { name: 'Kategorije' }).click();

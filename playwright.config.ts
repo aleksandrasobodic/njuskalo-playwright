@@ -27,7 +27,7 @@ export default defineConfig({
   use: {
     trace: 'on-first-retry',
     headless: false, // Set to false to use a visible browser window
-    viewport: { width: 1280, height: 720 },
+    viewport: { width: 1366, height: 768},
     ignoreHTTPSErrors: true,
     screenshot: 'only-on-failure',
     video: 'retain-on-failure',
@@ -40,6 +40,11 @@ export default defineConfig({
     // Optional: For mobile testing, you can uncomment and use these
     // ...devices['Pixel 5'], // Example for mobile testing
     // ...devices['iPhone 12'], // Example for mobile testing
+    launchOptions: {
+    args: [
+      '--disable-infobars',
+    ],
+  },
   },
 
   /* Configure projects for major browsers */
