@@ -61,6 +61,14 @@ npx playwright test --project=chromium --workers=1
 ```
 
 ---
+## 4. Project report
+---
+- Open project report in browser
+```bash
+npx playwright show-report
+```
+
+---
 ## 4. Project structure
 ```
 njuskalo-playwright/

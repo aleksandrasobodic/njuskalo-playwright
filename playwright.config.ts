@@ -27,12 +27,12 @@ export default defineConfig({
   use: {
     trace: 'on-first-retry',
     headless: true,
-    viewport: { width: 1366, height: 768},
+    viewport: { width: 1366, height: 768 },
     ignoreHTTPSErrors: true,
     screenshot: 'only-on-failure',
     video: 'retain-on-failure',
     actionTimeout: 0,
-    navigationTimeout: 30000,
+    navigationTimeout: 60000,
     /* Custom user-agent to avoid bot detection */
     userAgent: 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36',
     /* Custom device emulation for specific browsers */
@@ -40,11 +40,11 @@ export default defineConfig({
     // Optional: For mobile testing, you can uncomment and use these
     // ...devices['Pixel 5'], // Example for mobile testing
     // ...devices['iPhone 12'], // Example for mobile testing
-    launchOptions: {
+   /* launchOptions: {
     args: [
       '--disable-infobars',
     ],
-  },
+  },*/
   },
 
   /* Configure projects for major browsers */
