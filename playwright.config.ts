@@ -26,7 +26,7 @@ export default defineConfig({
   /* Shared settings for all the projects below. See https://playwright.dev/docs/api/class-testoptions. */
   use: {
     trace: 'on-first-retry',
-    headless: false, // Set to false to use a visible browser window
+    headless: true,
     viewport: { width: 1366, height: 768},
     ignoreHTTPSErrors: true,
     screenshot: 'only-on-failure',
@@ -59,12 +59,10 @@ export default defineConfig({
       use: { ...devices['Desktop Firefox'] }, // Adjust for Firefox if necessary
     },
 
-    /* You can enable WebKit/Safari testing if required
     {
       name: 'webkit',
       use: { ...devices['Desktop Safari'] },
     },
-    */
   ],
 
   /* Run your local dev server before starting the tests (if applicable) */

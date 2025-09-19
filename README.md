@@ -50,6 +50,15 @@ npx playwright test
 npx playwright test --headed
 ```
 
+- Run tests in a single worker (one test at a time, useful to avoid bot detection):
+```bash
+npx playwright test --workers=1
+```
+
+- Run tests only for a specific project/browser, e.g., Chromium:
+```bash
+npx playwright test --project=chromium --workers=1
+```
 
 ---
 ## 4. Project structure
